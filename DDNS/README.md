@@ -2,8 +2,8 @@
 
 ### Generate the HMAC-MD5 key
 ```
-\# dnssec-keygen -a hmac-md5 -b 128 -n USER dhcpupdate
-\# cat Kdhcpupdate*.key
+# dnssec-keygen -a hmac-md5 -b 128 -n USER dhcpupdate
+# cat Kdhcpupdate*.key
 ```
 
 ### /etc/named.conf
@@ -74,17 +74,17 @@ zone "0.168.192.in-addr.arpa" {
 
 ### Create the zones diretory 
 ``` 
-\# mkdir /var/named/master
-\# chown named.named /var/named/master
+# mkdir /var/named/master
+# chown named.named /var/named/master
 ```
 ### Forward static zone files
 ```
-\# vim /var/named/master/example.com_fwd.zone
+# vim /var/named/master/example.com_fwd.zone
 
-\# vim /var/named/master/example.com_rev_zone
+# vim /var/named/master/example.com_rev_zone
 
-\# chown -v named.named /var/named/master/example.com*
-\# restorecon -v /var/named/master/example.com*
+# chown -v named.named /var/named/master/example.com*
+# restorecon -v /var/named/master/example.com*
 ```
 
 ### /etc/dhcp/dhcpd.conf
