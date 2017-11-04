@@ -142,7 +142,7 @@ subnet 192.168.0.0  netmask 255.255.255.0 {
     range 192.168.0.51 192.168.0.253;
     allow unknown clients;
     # ddns-hostname = concat(binary-to-ascii(10, 8, "-", leased-address), "-wifi");
-    ddns-hostname = concat("system",binary-to-ascii(10, 8, "-",suffix(leased-address,1)), "-wifi");
+    ddns-hostname = concat("system",binary-to-ascii(10, 8, "-",suffix(leased-address,1)));
     ddns-domainname = "example.com";
   }
   next-server 192.168.0.100;
