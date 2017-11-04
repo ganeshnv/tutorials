@@ -77,10 +77,9 @@ zone "0.168.192.in-addr.arpa" {
 # mkdir /var/named/master
 # chown named.named /var/named/master
 ```
-### Forward static zone files
+### Forward & Reverse static zone files
 ```
 # vim /var/named/master/example.com_fwd.zone
-
 # vim /var/named/master/example.com_rev_zone
 
 # chown -v named.named /var/named/master/example.com*
@@ -149,3 +148,4 @@ host jenkins {
   fixed-address 192.168.0.130;
 }
 ```
+:+1: Congrat...
