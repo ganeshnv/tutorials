@@ -1,5 +1,11 @@
 ## DDNS Configuration on Centos 7
 
+### Install the DNS & DHCP server package
+```
+# yum install bind bind-utils 
+# yum install dhcp
+```
+
 ### Generate the HMAC-MD5 key
 ```
 # dnssec-keygen -a hmac-md5 -b 128 -n USER dhcpupdate
@@ -148,4 +154,14 @@ host jenkins {
   fixed-address 192.168.0.130;
 }
 ```
+
+### Start the Service
+```
+# systemctl start named
+# systemctl enable named
+
+# systemctl start dhcpd
+# systemctl enable named
+```
+
 :+1: Congrat...
