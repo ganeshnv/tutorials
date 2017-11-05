@@ -30,7 +30,7 @@ Proxy Config: localhost:50000
   autossh -M 10984 -N -f -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -o "ServerAliveInterval=30" -o "ServerAliveCountMax=3" -i /root/.ssh/rsa_key.pem -R 8888:localhost:22 user@middle-server 
 ```
 ### Reverse Connection
-![Reverse Connection](https://i.stack.imgur.com/4iK3b.png)
+![Reverse Connection](http://newgatewaysolution.com/images/personal/4iK3b.png)
 
 ### Forward Connection
-![Forwarded Connection](https://i.stack.imgur.com/a28N8.png)
+![Forwarded Connection](http://newgatewaysolution.com/images/personal/a28N8.png)
