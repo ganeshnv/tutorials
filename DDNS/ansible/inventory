@@ -1,5 +1,9 @@
 [dns_server]
-dns1.example.com # <ip 192.168.0.100>
+system92.example.com # <ip 192.168.0.100>
 
 [dhcp_server]
-dhcp.example.com # <ip 192.168.0.100>
+system92.example.com # <ip 192.168.0.100>
+
+[ddns:children]
+dns_server
+dhcp_server

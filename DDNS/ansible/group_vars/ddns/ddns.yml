@@ -1,0 +1,38 @@
+---
+configuration:
+  dhcp: 
+    - domain: example.com
+      subnet: '192.168.0.0/24'
+      gateway: '192.168.0.1'
+      known_pool: '192.168.0.0/25'
+      unknown_pool: '192.168.0.128/25'
+      name_server: '192.168.0.100'
+    - domain: crackers.org
+      subnet: '192.168.1.0/24'
+      gateway: '192.168.1.1'
+      known_pool: '192.168.1.0/25'
+      unknown_pool: '192.168.1.128/25'
+      name_server: '192.168.0.100'
+  dns:
+    - domain: example.com
+      TTL: 86000
+      A_record:
+        - [ '@', '192.168.0.100']
+      CNAME_record:
+        - [ 'server', '@']
+        - [ 'mail', '@']
+        - [ 'external', 'external.testing.com.']
+      MX_record:
+        - [ 10, 'mail.example.com.' ]
+        - [ 20, 'mx.google.com.' ]
+    - domain: crakers.org
+      TTL: 86000
+      A_Record:
+        - [ '@', '192.168.0.100']
+      CNAME_Record:
+        - [ 'server', '@']
+        - [ 'mail', '@']
+        - [ 'external', 'external.testing.com.']
+      MX_Record:
+        - [ 10, 'mail.crackers.org.' ]
+        - [ 20, 'mx.google.com.' ]

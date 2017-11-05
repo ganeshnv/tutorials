@@ -10,7 +10,7 @@
 
 - name: Generate the dhcpd.conf files
   template: 
-    src: dhpcd.conf.j2
+    src: dhcpd.conf.j2
     dest: /etc/dhcp/dhcpd.conf
   notify: restart_dhcpd
 

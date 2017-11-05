@@ -1,0 +1,40 @@
+- name: bind package installation
+  yum:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - bind
+    - bind-utils
+
+- name: master directory create
+  file:
+    path: /var/named/master
+    owner: named
+    group: named
+    state: directory
+
+- name: named.conf main configuration generate
+  template:
+    src: named.conf.j2
+    dest: /etc/named.conf
+  notify: restart_named
+
+- name: zone files generate
+  template: 
+    src: named.zones.j2
+    dest: /etc/named.zones
+  notify: restart_named
+
+- name: forward zone file generate 
+  template:
+    src: "{{ item }}_fwd.j2"
+    dest: "/var/named/master/{{ item }}}_fwd.zone"
+  with_items: {{ domains }}
+  notify: restart_named
+
+- name: Reverse zone file generate
+  template:
+    src: "{{ item }}_rev.j2"
+    dest: "/var/named/master/{{ item }}}_rev.zone"
+  with_items: {{ domains }}
+  notify: restart_named
