@@ -1,5 +1,10 @@
 # SSH configuration
 
+### Use Proxy for Using though SSH remote host
+```
+# ssh -D 50000 suer@ssh_server
+```
+
 ### Reverse SSH connection 
 
 ```
