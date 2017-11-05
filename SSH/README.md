@@ -1,8 +1,10 @@
 # SSH configuration
 
-### Use Proxy for Using though SSH remote host
+### Use Proxy to Remote Server
 ```
-# ssh -D 50000 suer@ssh_server
+# ssh -D 50000 user@ssh_server
+
+Proxy Config: localhost:50000
 ```
 
 ### Reverse SSH connection 
