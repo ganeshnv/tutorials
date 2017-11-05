@@ -1,0 +1,16 @@
+- name: Yum EPEL package installation
+  yum:
+    name: epel-release
+    state: latest
+
+- name: dhcp dhcp intallation
+  yum: 
+    name: dhcp
+    state: latest
+
+- name: Generate the dhcpd.conf files
+  template: 
+    src: dhpcd.conf.j2
+    dest: /etc/dhcp/dhcpd.conf
+  notify: restart_dhcpd
+

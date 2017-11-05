@@ -1,0 +1,13 @@
+- network:
+  name: example.com
+    subnet: '192.168.0.0/24'
+    gateway: '192.168.0.1'
+    known_pool: '192.168.0.0/25'
+    unknown_pool: '192.168.0.128/25'
+  - name: cracker.org
+    subnet: '192.168.1.0/24'
+    gateway: '192.168.1.1'
+    known_pool: '192.168.0.0/25'
+    unknown_pool: '192.168.0.128/25'
+    - domain_name: 
+    
