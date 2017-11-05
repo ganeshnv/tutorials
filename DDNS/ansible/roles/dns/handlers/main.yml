@@ -1,0 +1,4 @@
+- name: restart_named
+  service:
+    name: 'named'
+    state: 'restarted'
