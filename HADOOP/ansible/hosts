@@ -1,0 +1,9 @@
+[namenode_master]
+hdn1.example.com
+
+[namenode_slave]
+hdn2.example.com
+
+[hadoop_datanode]
+hdd1.example.com
+hdd2.example.com
