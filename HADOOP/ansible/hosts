@@ -1,9 +1,14 @@
-[namenode_master]
-hdn1.example.com
+[hadoop_namenode]
+system92.example.com
 
-[namenode_slave]
-hdn2.example.com
+[hadoop_secnamenode]
+system150.example.com
 
 [hadoop_datanode]
-hdd1.example.com
-hdd2.example.com
+system128.example.com
+system154.example.com
+
+[hadoop_all:children]
+hadoop_namenode
+hadoop_secnamenode
+hadoop_datanode

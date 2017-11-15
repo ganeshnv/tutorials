@@ -1,0 +1,1 @@
+hadoop_password: "{{ hadoop_password_vault }}"
