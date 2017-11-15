@@ -1,0 +1,40 @@
+- name: Remove the repos files
+  file:
+    name: "/etc/yum.repos.d/{{ item }}"
+    state: absent
+  with_items:
+    - CentOS-Vault.repo
+    - CentOS-Sources.repo
+    - CentOS-Debuginfo.repo
+    - CentOS-Base.repo
+
+- name: Local repo install
+  yum_repository:
+    name: local
+    description: Local Repository
+    baseurl: http://192.168.0.100/yum/centos/$releasever
+    gpgcheck: no
+    enabled: yes
+    metadata_expire: 60
+
+- name: install libselinux python package
+  yum: 
+    name: libselinux-python
+    state: latest
+    enablerepo: local
+
+- name: diabled selinux
+  selinux:
+    state: disabled
+
+- name: basic package installation
+  yum:
+    name: "{{ item }}"
+    state: present
+    enablerepo: local
+  with_items:
+    - vim-enhanced
+    - vim-common
+    - net-tools
+    - git
+    - nrpe

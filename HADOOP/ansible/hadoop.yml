@@ -1,0 +1,26 @@
+- hosts: hadoop_all
+  roles:
+    - common
+    - hadoop_common
+
+- hosts: hadoop_namenode
+  tasks:
+    - name: Generate the ssh key pair
+      user:
+        name: hadoop
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+      register: user_created
+
+    - name: set fact 
+      set_fact:
+        user_key: "{{ user_created.ssh_public_key }}"
+
+- hosts: hadoop_all
+  tasks: 
+    - name: copy cert to all hosts
+      authorized_key:
+        user: hadoop
+        key: "{{ hostvars[hadoop_namenode].user_key }}"
+      when: user_key is defined

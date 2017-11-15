@@ -1,0 +1,14 @@
+[hadoop_namenode]
+system92.example.com
+
+[hadoop_secnamenode]
+system150.example.com
+
+[hadoop_datanode]
+system128.example.com
+system154.example.com
+
+[hadoop_all:children]
+hadoop_namenode
+hadoop_secnamenode
+hadoop_datanode
