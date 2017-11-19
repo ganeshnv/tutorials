@@ -5,7 +5,7 @@
 
 - name: Install the openldap and required Packages for RedHat
   yum: name={{ item }} state=installed
-  with_items: openldap_server_pkgs
+  with_items: "{{  openldap_server_pkgs }}"
   when: ansible_os_family == 'RedHat'
 
 

@@ -1,0 +1,7 @@
+- hosts: openldap-master
+  roles:
+    - ldap
+
+#- hosts: opendlap-slave
+#  roles:
+#    - ldap
