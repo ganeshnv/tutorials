@@ -1,4 +1,5 @@
 - name: install rabbitmq
-  yum:
-    name: rabbitmq
-    state: latest
+  yum: name=https://dl.bintray.com/rabbitmq/rabbitmq-server-rpm/rabbitmq-server-3.6.14-1.el7.noarch.rpm state=installed 
+
+- name: start service
+  service: name=rabbitmq-server state=started eanbled=yes
