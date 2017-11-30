@@ -254,6 +254,9 @@ Post Listen: tcp/2377, tcp/4789, tcp/7946
 **Join the nodes**
  # docker swarm join --token <token ID> <Master IP>:2377
 
+**show join tokens**
+  # docker swarm join-token (worker|manager)
+
 **list swarm nodes**
  # docker node ls
 
