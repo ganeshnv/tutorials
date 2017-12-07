@@ -277,3 +277,9 @@ Post Listen: tcp/2377, tcp/4789, tcp/7946
 
 **remove list from nodes**
  # docker swarm rm <node>
+
+**demote the in swarm cluster**
+ # docker node demote <Node>
+ 
+**promote node into master**
+ # docker node promote <NODE>
