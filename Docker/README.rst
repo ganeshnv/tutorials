@@ -283,3 +283,6 @@ Post Listen: tcp/2377, tcp/4789, tcp/7946
  
 **promote node into master**
  # docker node promote <NODE>
+
+**Avialablity of the NODE**
+ # docker node update --availability ("active"|"pause"|"drain")
