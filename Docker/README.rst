@@ -243,6 +243,36 @@ Backup from other container:
 
  # docker run --rm --volume-from web_con -v $PWD:/backup ubuntu tar -czf /backup/web_backup.tgz /var/www/html
 
+Create the Asterisk image using commit
+--------------------------------------
+
+ # docker login
+ # docker pull ubuntu
+ # docker run -i -t --name asterisk ubuntu /bin/bash
+   > apt-get update 
+   > apt-get install asterisk
+   > exit
+ # docker commit $(docker ps -lq)
+ # docker tag asterisk <username>/asterisk
+ # docker run -d azhaguprabu/asterisk /usr/sbin/asterisk -f
+
+Create the Asterisk image using using build:
+-------------------------------------------
+
+Dockerfile:
+	> FROM ubuntu:latest
+	> MAINTAINER azhagurpabu <azhaguprabu@gmail.com>
+	> RUN apt-get update && apt-get install -y asterisk vim && rm -rf /var/lib/lists/*
+ 	> EXPOSE 5060:5060/udp
+	> EXPOSE 10000-20000:10000:20000/udp
+	> ENTRYPOINT [ "/usr/sbin/asterisk" ]
+	> CMD ["-f"]
+
+  # docker build -t asterisk .
+  # docker tag asterisk <username>/asterisk
+  # docker push <username>/asterisk
+  # docker run -d azhaguprabu/asterisk
+
 Swarm:
 ------
 
@@ -286,3 +316,5 @@ Post Listen: tcp/2377, tcp/4789, tcp/7946
 
 **Avialablity of the NODE**
  # docker node update --availability ("active"|"pause"|"drain")
+
+
