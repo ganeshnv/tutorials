@@ -2,27 +2,27 @@
 
 Namespaces are a feature of the Linux Kernel that isolate and virtualize system resource of a collection of processes. Virtualized include 
 
-	* Process ID
-	* Hostname
-	* user ID's
-	* Netowrk Access
-	* Interprocess Communications
-	* filesystem
+	- Process ID
+	- Hostname
+	- user ID's
+	- Netowrk Access
+	- Interprocess Communications
+	- filesystem
  
  Here I am going explain the Network Access Namespace.
 
 ### Docker Backend process to create the container with Networking
 
-	* Create container with unique Namespace you can identify the following command
-	* Create the veth patch interface one end connect with Bridge ( default ) other end create namespace interface of the container.
-	* you can manually see the namespace and see the ip address 
+	- Create container with unique Namespace you can identify the following command
+	- Create the `veth` patch interface one end connect with Bridge ( default ) other end create namespace interface of the container.
+	- you can manually see the namespace and see the ip address 
 
-	~~~ # docker inspect <ContainerID> |grep Pid
+	```# docker inspect <ContainerID> |grep Pid
 	    # mkdir /var/run/netns
 	    # ln -sf /proc/<Pid>/ns/net /var/run/netns/<container UUID | container ID >
 	    # ip netns list
 	    # ip netns exec <Container UUID | ID > ip addr
-	~~~
+	```
 
 ## Connect container with specific Network 
 
