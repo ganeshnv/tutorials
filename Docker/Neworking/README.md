@@ -20,6 +20,7 @@ Namespaces are a feature of the Linux Kernel that isolate and virtualize system 
 	```# docker inspect <ContainerID> |grep Pid
 	   # mkdir /var/run/netns
 	   # ln -sf /proc/<Pid>/ns/net /var/run/netns/<container UUID | container ID >
+	   # ip netns identify <PID>
 	   # ip netns list
 	   # ip netns exec <Container UUID | ID > ip addr
 	```
