@@ -1,6 +1,7 @@
 # Docker Network 
 
 Namespaces are a feature of the Linux Kernel that isolate and virtualize system resource of a collection of processes. Virtualized include 
+
 	* Process ID
 	* Hostname
 	* user ID's
