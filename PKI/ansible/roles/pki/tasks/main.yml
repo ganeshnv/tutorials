@@ -1,0 +1,14 @@
+- name: create the CA directory
+  file:
+    path: /root/PKI/ca
+    state: directory
+
+- name: copy Ca configuration 
+  copy:
+    src: ca-openssl.cnf
+    dest: /root/PKI/ca/openssl.cnf
+
+- name: Generate the CA key 
+  command:  "openssl genrsa -aes256 -out private/ca.key.pem 4096"
+    args:
+      chdir: /root/PKI/ca
