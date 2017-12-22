@@ -16,7 +16,7 @@
 
 - Create Branch
 ``` #git branch <branch_name>```
--Delete Branch
+- Delete Branch
 ``` # git branch -d <branch_name> ```
-	- -D Option --force delete if content not commit
+	- ```-D``` Option --force delete if content not commit
  
