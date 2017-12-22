@@ -1,8 +1,16 @@
-* GIT Tutorials
+## GIT Tutorials
 
-** git configuration 
+### Git Installation
 
-# git config --global user.name "user"
-# git config --global user.email "user@example.com"
+- Centos 
+  ``` #yum install git ```
+- Ubuntu
+   ``` #sudo apt-get install git ```
+
+## Git Configuration 
+
+``` #git config --global user.name "user"
+    #git config --global user.email "user@example.com"
+```
 
 
