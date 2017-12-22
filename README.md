@@ -1,17 +1,12 @@
-# tutorials
-> https://www.slideshare.net/neependra/accessing-kubernetes-services-from-external-world?next_slideshow=1
-> https://www.server-world.info/
+## tutorials
 
-#Git tutorial
+Hot Topic upcoming IT industry
 
-Stash:
-
-git stash
-git stash save "message"
-git stash pop
-git stash branch <branchname>
-
-Tag:
-
-git tag -l
-git tag 
+- IoT
+- ML & AI
+- Python
+- Containersation 
+- Cloud
+- BigData
+- OpenSource
+- Linux
