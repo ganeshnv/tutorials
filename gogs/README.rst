@@ -12,12 +12,12 @@ yum repo
 install Maria 10.2 ( working DB )
 ---------------------------------
 vi /etc/yum.repos.d/mariadb.repo
-
-> [mariadb]
-> name = MariaDB
-> baseurl = http://yum.mariadb.org/10.2/centos7-amd64
-> gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-> gpgcheck=1
+:
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.2/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
 
 # yum install MariaDB-server MariaDB-client
 
