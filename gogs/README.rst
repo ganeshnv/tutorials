@@ -27,8 +27,8 @@ gpgcheck=1
 
 #mysql -uroot -p
 
-> create database gogs
-> set global storage_engine=INNODB;
+* create database gogs
+* set global storage_engine=INNODB;
 
 # systemctl start mariadb
 # systemctl enable mariadb
