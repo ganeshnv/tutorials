@@ -3,10 +3,8 @@ Gogs on Centos 7
 
 yum repo
 --------
-`` sudo wget -O /etc/yum.repos.d/gogs.repo \
-  https://dl.packager.io/srv/pkgr/gogs/pkgr/installer/el/7.repo
-sudo yum install gogs
-``
+* # wget -O /etc/yum.repos.d/gogs.repo https://dl.packager.io/srv/pkgr/gogs/pkgr/installer/el/7.repo
+* # yum install gogs
 
 # systemctl start gogs
 # systemctl enable gogs
@@ -25,7 +23,7 @@ gpgcheck=1
 
 # mysqladmin -uroot password <dbpass>
 
-#mysql -uroot -p
+# mysql -uroot -p
 
 * create database gogs
 * set global storage_engine=INNODB;
@@ -67,5 +65,3 @@ LDAP configuration
 	* User searches: ou=People,dc=example,dc=com
 	* User Filter: (&(objectClass=posixAccount)(uid=%s))
 	* Email Attr: mail
-
-
