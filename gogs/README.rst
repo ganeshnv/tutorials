@@ -11,8 +11,8 @@ sudo yum install gogs
 # systemctl start gogs
 # systemctl enable gogs
 
-install Maria 10.2
-------------------
+install Maria 10.2 ( working DB )
+---------------------------------
 vi /etc/yum.repos.d/mariadb.repo
 
 [mariadb]
