@@ -12,7 +12,6 @@ yum repo
 install Maria 10.2 ( working DB )
 ---------------------------------
 vi /etc/yum.repos.d/mariadb.repo
-::
 
 [mariadb]
 name = MariaDB
