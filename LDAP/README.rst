@@ -1,11 +1,12 @@
 Installation:
 -------------
 
-`` #yum -y install openldap* migrationtools ``
+#yum -y install openldap* migrationtools
 
-`` # slappasswd ``
+# slappasswd
 
 Edit the lines:
+---------------
 
 cd /etc/openldap/slapd.d/cn=config
 vi olcDatabase={2}hdb.ldif
