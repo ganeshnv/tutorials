@@ -93,6 +93,14 @@ ou: Group
 # ldapsearch -x cn=ldapuser1 -b dc=example,dc=com
 # ldapsearch -x -b 'dc=example,dc=com' '(objectclass=*)'
 
+checksum Error Fix:
+===================
+
+1. tail -n +3 /etc/openldap/slapd.d/cn=config.ldif >test.ldif
+2. yum install perl-Archive-Zip
+3. crc32 test.ldif
+4. Replace the second line of the file /etc/openldap/slapd.d/cn=config.ldif
+
 NFS Home directory exports:
 ---------------------------
 
