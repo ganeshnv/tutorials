@@ -1,0 +1,10 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:BG_PREFIXES - [0:0]
+# ipv4 static rules
+{% for rules in ipv4_static %}
+{{ rules }}
+{% endfor %}
+COMMIT

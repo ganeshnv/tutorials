@@ -1,0 +1,2 @@
+ipv4_static_rules:
+  - "-A INPUT -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT"

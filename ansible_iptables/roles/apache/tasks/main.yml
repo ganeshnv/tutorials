@@ -1,0 +1,40 @@
+- name: set_facts
+  set_fact:
+    ipv4_static: "{{ ipv4_static }} + {{ ipv4_static_rules }}"
+
+- name: Install package
+  package:
+    name: httpd
+    state: installed
+
+- name: start the service
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Remvoed the default config
+  file:
+    dest: "/etc/httpd/conf.d/{{ item }}"
+    state: absent
+  with_items:
+    - welcome.conf
+    - userdir.conf
+    - README
+
+- name: deploy source
+  copy:
+    src: var/www/html/index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Virtual Host config
+  template:
+    src: etc/httpd/conf.d/virutalhost.conf.j2
+    dest: /etc/httpd/conf.d/virutalhost.conf
+    owner: root
+    group: apache
+    mode: 0644
+  notify: restart apache

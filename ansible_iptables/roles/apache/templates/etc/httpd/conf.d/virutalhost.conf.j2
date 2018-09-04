@@ -1,0 +1,6 @@
+<VirtualHost {{ ansible_default_ipv4.address }}:80>
+	ServerName www.example.com
+	ServerAlias example.com
+	DocumentRoot /var/www/html
+	DirectoryIndex index.html
+</VirtualHost>

@@ -1,0 +1,5 @@
+ipv4_static_rules: 
+  - '-A INPUT -j REJECT --reject-with icmp-host-prohibited'
+  - '-A FORWARD -j REJECT --reject-with icmp-host-prohibited'
+  - '-A INTERNAL 192.168.1.0/24 -m comment --comment DC1 -j ACCEPT'
+  - '-A INTERNAL 192.168.2.0/24 -m comment --comment DC2 -j ACCEPT'

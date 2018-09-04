@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+    - iptables_pre
+
+- hosts: web
+  roles:
+    - apache
+
+- hosts: all
+  roles:
+    - iptables_post

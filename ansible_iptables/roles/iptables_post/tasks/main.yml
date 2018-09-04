@@ -1,0 +1,18 @@
+- name: set_facts
+  set_fact:
+    ipv4_static: "{{ ipv4_static + ipv4_static_rules }}"
+
+- name: iptables
+  template:
+    src: iptables.j2
+    dest: /etc/sysconfig/iptables
+    mode: 0600
+    owner: root
+    group: root
+    setype: system_conf_t
+  notify: reload_iptables
+
+- name: start iptables
+  service:
+    name: iptables
+    state: started
