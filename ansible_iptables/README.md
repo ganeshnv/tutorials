@@ -2,6 +2,7 @@
 
 Add in begining tasks/main.yml
 -----------------------------
+	---
 	- name: set_facts
   	    set_fact:
               ipv4_static: "{{ ipv4_static }} + {{ ipv4_static_rules }}"
