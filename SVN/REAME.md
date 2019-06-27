@@ -115,7 +115,7 @@ Migrate the Git server:
 $svn log -q | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > authors-transform.txt
 
 $ git svn clone 
-$ git svn clone http://devops4.lab3.bitgravity.com/svn/repo --authors-file=../authors-transform.txt --no-metadata
+$ git svn clone http://svn.example.com/svn/repo --authors-file=../authors-transform.txt --no-metadata
 
 $ for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/tags); do git tag ${t/tags\//} $t && git branch -D -r $t; done
 $ for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git branch $b refs/remotes/$b && git branch -D -r $b; done
